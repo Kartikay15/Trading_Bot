@@ -52,3 +52,5 @@ place_order('SPY',10,OrderSide.BUY)
 
 # Get Orders
 get_orders(QueryOrderStatus.OPEN,OrderSide.BUY)
+
+

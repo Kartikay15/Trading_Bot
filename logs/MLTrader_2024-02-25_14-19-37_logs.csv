@@ -1,0 +1,47 @@
+2024-02-25 14:19:37,935: root: INFO: MLTrader : Executing the initialize lifecycle method
+2024-02-25 14:19:38,879: root: INFO: Current backtesting datetime 2023-12-15 08:30:00-05:00
+2024-02-25 14:19:38,879: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
+2024-02-25 14:19:38,880: root: INFO: Current backtesting datetime 2023-12-15 09:30:00-05:00
+2024-02-25 14:19:38,880: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
+2024-02-25 14:19:38,881: root: INFO: [34mExecuting the on_trading_iteration lifecycle method at 2024-02-25 14:19:38[0m
+2024-02-25 14:19:38,881: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-02-25 14:19:38,895: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-02-25 14:19:38,896: root: ERROR: 'datetime.datetime' object has no attribute 'strfttime'
+2024-02-25 14:19:38,899: root: ERROR: Traceback (most recent call last):
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 856, in run
+    self._run_trading_session()
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 807, in _run_trading_session
+    self._on_trading_iteration()
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 276, in func_output
+    result = func_input(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 300, in func_output
+    result = func_input(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 87, in func_output
+    return func_input(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 378, in _on_trading_iteration
+    on_trading_iteration()
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\tools\decorators.py", line 62, in func_output
+    frame, result = call_function_get_frame(func_input, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\.venv\Lib\site-packages\lumibot\tools\decorators.py", line 30, in call_function_get_frame
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\tradingbot.py", line 52, in on_trading_iteration
+    news = self.get_news()
+           ^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\tradingbot.py", line 41, in get_news
+    today, three_days_prior = self.get_dates()
+                              ^^^^^^^^^^^^^^^^
+  File "E:\Major Project\Trading_Bot\tradingbot.py", line 38, in get_dates
+    return today.strfttime('%Y-%m-%d'), threee_days_prior.strfttime('%Y-%m-%d')
+           ^^^^^^^^^^^^^^^
+AttributeError: 'datetime.datetime' object has no attribute 'strfttime'
+
+2024-02-25 14:19:38,902: root: INFO: MLTrader : Executing the on_bot_crash event method
+2024-02-25 14:19:38,924: root: INFO: Backtesting finished
+2024-02-25 14:19:38,926: root: WARNING: Cannot plot returns because the strategy returns are missing
+2024-02-25 14:19:39,019: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
+2024-02-25 14:19:39,020: backtest_stats: INFO: Backtest took 0:00:01.084798 for a speed of 0.000

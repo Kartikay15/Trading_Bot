@@ -1,2 +1,10 @@
 alpaca-py - To install run "pip install alpaca-py"
 dotenv - To install run "pip install python-dotenv"
+lumibot - To install run "pip install lumibot
+pip install kiwisolver
+pip install alpaca-trader-api
+pip install timedelta
+pip install dotenv
+pip install torch
+pip install torchvision
+pip install transformers
